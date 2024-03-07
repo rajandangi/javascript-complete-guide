@@ -3,6 +3,8 @@ In this repository, you will find various sample projects, each demonstrating a 
 
 ## Projects
 1. Drag and Drop Implementation
+2. Advance Functions Concepts
+3. Number and String
 
 ## Some Useful Concepts
 1. Pure Function
