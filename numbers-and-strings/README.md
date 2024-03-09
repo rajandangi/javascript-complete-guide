@@ -4,4 +4,5 @@
 
 
 ## Resources:
-[JavaScriptString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+1. [JavaScriptString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+2. [Tagged Template](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

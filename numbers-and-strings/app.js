@@ -24,3 +24,23 @@ function randomIntBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 console.log(randomIntBetween(5, 10));
+
+
+// Tagged Template Literal - A function that can be used to parse template literals with a function
+function productDescription(strings, productName, productPrice) {
+    console.log(strings);
+    console.log(productName);
+    console.log(productPrice);
+
+    let priceCategory = 'cheap';
+    if (productPrice > 20) {
+        priceCategory = 'highly priced';
+    }
+    console.log(strings[2]);//This product is
+    return `${strings[0]}${productName}${strings[1]}${priceCategory}${strings[2]}`;
+}
+productName = 'Javascript Course';
+productPrice = 100;
+const productOutput = productDescription`This product is (${productName}) and it costs ${productPrice}. That's all`;
+console.log(productOutput);
+
