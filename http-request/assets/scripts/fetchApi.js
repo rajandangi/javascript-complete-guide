@@ -4,47 +4,27 @@ const form = document.querySelector('#new-post form');
 const fetchButton = document.querySelector('#available-posts button');
 const postList = document.querySelector('ul');
 
+
 /**
- * Sends an HTTP request.
- *
+ * Sends an HTTP request using the Fetch API.
+ * - fetch by default uses GET method
+ * - fetch by default is a promise based API so we don't need to create a new promise object unlike XMLHttpRequest
  * @param {string} method - The HTTP method (e.g., 'GET', 'POST', 'PUT', 'DELETE').
  * @param {string} url - The URL to send the request to.
  * @param {Object} data - The data to send with the request (optional).
- * @returns {Promise} A promise that resolves with the response data.
+ * @returns {Promise} A Promise that resolves to the response data.
  */
 function sendHttpRequest(method, url, data) {
-    const promise = new Promise((resolve, reject) => {
-        // Creation of a new XMLHttpRequest object
-        const xhr = new XMLHttpRequest();
-
-        // Set request headers
-        xhr.setRequestHeader('Content-Type', 'application/json');
-
-        // Open a new connection, using the GET request on the URL endpoint
-        xhr.open(method, url);
-
-        // Define Response type
-        xhr.responseType = 'json';
-
-        // Define what happens on successful data retrieval
-        xhr.onload = function () {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                resolve(xhr.response);
-            } else {
-                reject(new Error('Something went wrong!!'));
-            }
+    return fetch(url, {
+        method: method,
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
         }
-
-        // Define what happens on error
-        xhr.onerror = function () {
-            reject(new Error('Failed to send request'));
-        }
-
-        // Send request
-        xhr.send(JSON.stringify(data));
     })
-
-    return promise;
+        .then(response => {
+            return response.json();
+        });
 }
 
 
@@ -86,9 +66,6 @@ async function createPost(title, content) {
     };
     sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post);
 }
-
-
-
 
 
 
