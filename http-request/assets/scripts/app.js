@@ -31,6 +31,7 @@ function sendHttpRequest(method, url, data) {
             if (xhr.status >= 200 && xhr.status < 300) {
                 resolve(xhr.response);
             } else {
+                // xhr.response;
                 reject(new Error('Something went wrong!!'));
             }
         }

@@ -17,13 +17,24 @@ const postList = document.querySelector('ul');
 function sendHttpRequest(method, url, data) {
     return fetch(url, {
         method: method,
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        body: data,
+        // headers: {
+        //     'Content-Type': 'application/json'
+        // }
     })
         .then(response => {
-            return response.json();
+            if (response.status >= 200 && response.status < 300) {
+                return response.json();
+            } else {
+                return response.json().then(errData => {
+                    console.log(errData);
+                    throw new Error('Something went wrong-server side!');
+                })
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            throw new Error('Something went wrong!');
         });
 }
 
@@ -50,21 +61,15 @@ async function fetchPosts() {
 }
 
 
+
 /**
- * Creates a new post with the given title and content.
- *
- * @param {string} title - The title of the post.
- * @param {string} content - The content of the post.
- * @returns {Promise<void>} - A promise that resolves when the post is created.
+ * Creates a new post by sending a POST request to the specified URL with the provided form data.
  */
-async function createPost(title, content) {
-    const userId = Math.random();
-    const post = {
-        title: title,
-        body: content,
-        userId: userId
-    };
-    sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', post);
+async function createPost() {
+    const formData = new FormData(form);
+    formData.append('userId', Math.random());
+
+    sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', formData);
 }
 
 
@@ -75,9 +80,7 @@ fetchButton.addEventListener('click', fetchPosts);
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-    const enteredTitle = event.currentTarget.querySelector('#title').value;
-    const enteredContent = event.currentTarget.querySelector('#content').value;
-    createPost(enteredTitle, enteredContent);
+    createPost();
 })
 
 postList.addEventListener('click', event => {
