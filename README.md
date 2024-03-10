@@ -9,7 +9,8 @@ In this repository, you will find various sample projects, each demonstrating a 
 5. Http Request in JavaScript
 6. JavaScript Libraries
 7. Modular JavaScript
-8. Javascript Tooling
+8. Javascript Tooling: EsLint, webpack, etc.
+9. Utilizing Browser Storage: localStorage,sessionStorage, Cookies, and IndexedDB
 
 
 ## Some Useful Concepts
@@ -22,3 +23,6 @@ In this repository, you will find various sample projects, each demonstrating a 
 4. [EsLint rules](https://eslint.org/docs/latest/rules/)
 5. [Webpack Code splitting](https://webpack.js.org/guides/code-splitting/)
 6. [Webpack Entry Point](https://webpack.js.org/concepts/#entry)
+7. [Browser Storage](https://medium.com/@lancelyao/browser-storage-local-storage-session-storage-cookie-indexeddb-and-websql-be6721ebe32a)
+8. [Indexed DB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+9. 
