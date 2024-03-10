@@ -18,6 +18,7 @@ class ProjectList {
 
     connectDroppable() {
         const list = document.querySelector(`#${this.type}-projects ul`);
+        console.log(globalThis.DFAULT_VALUE);// access global variable
 
         list.addEventListener('dragenter', event => {
             if (event.dataTransfer.types[0] === 'text/plain') {
