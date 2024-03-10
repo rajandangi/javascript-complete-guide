@@ -7,6 +7,8 @@ In this repository, you will find various sample projects, each demonstrating a 
 3. Number and String
 4. Async Javascript : Promises & Callbacks
 5. Http Request in JavaScript
+6. JavaScript Libraries
+7. Modular JavaScript
 
 ## Some Useful Concepts
 1. Pure Function
