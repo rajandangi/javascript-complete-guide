@@ -4,15 +4,20 @@
   "description": "Javascript - The complete guide",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack",
+    "build:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server",
+    "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.config.prod.js"
   },
   "author": "Rajan Dangi",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.1.1"
+    "webpack": "5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }

@@ -1,5 +1,3 @@
-export function doSomething() {};
-
 export default class {
   constructor(hostElementId, insertBefore = false) {
     if (hostElementId) {
