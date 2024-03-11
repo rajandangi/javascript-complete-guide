@@ -28,3 +28,5 @@ In this repository, you will find various sample projects, each demonstrating a 
 8. [Indexed DB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 9. [idb.js- Promise Based IndexedDB (third party library)](https://github.com/jakearchibald/idb)
 10. [Babel](https://github.com/babel/babel-loader)
+11. [Core js](https://www.npmjs.com/package/core-js)
+12. [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime)
