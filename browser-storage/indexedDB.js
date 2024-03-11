@@ -1,12 +1,6 @@
 const storeBtn = document.getElementById('store-btn');
 const retrieveBtn = document.getElementById('retrieve-btn');
 
-const userId = '12345';
-const user = {
-    name: 'Max',
-    age: 30,
-    hobbies: ['Sports', 'Cooking']
-};
 /**
  * Basic pattern
  * --------------
@@ -18,17 +12,32 @@ const user = {
  * 5. Do something with the results (which can be found on the request object).
  */
 
-// Let us open our database
+// 1. Let us open our database
+let db = null;
 const dbRequest = window.indexedDB.open("MyTestDatabase", 1);
 
-// This event is only implemented in recent browsers
+// if there was any problem opening the database, an error event will be triggered
+dbRequest.onerror = (event) => {
+    console.error("Why didn't you allow my web app to use IndexedDB?!");
+};
+
+// This event is triggered when the database is opened successfully
+dbRequest.onsuccess = (event) => {
+    db = event.target.result;
+};
+
+// When you create a new database or increase the version number of an existing database,
+// the onupgradeneeded event will be triggered
 dbRequest.onupgradeneeded = function (event) {
     // Save the IDBDatabase interface
-    const db = event.target.result;
+    db = event.target.result;
 
-    // Create an objectStore for this database
+    // 2. Create an objectStore to hold information about our products. We're
+    // going to use "id" as our key path because it's guaranteed to be unique
     const objStore = db.createObjectStore("products", { keyPath: "id" });
 
+    // 3. Use transaction oncomplete to make sure the objectStore creation is
+    // finished before adding data into it.
     objStore.transaction.oncomplete = function (event) {
         // Store values in the newly created objectStore.
         const productsStore = db.transaction('products', 'readwrite').objectStore('products');
@@ -37,15 +46,29 @@ dbRequest.onupgradeneeded = function (event) {
     }
 };
 
-dbRequest.onerror = function (event) {
-
-};
 
 storeBtn.addEventListener('click', () => {
+    if (!db) {
+        console.error('No database found!');
+        return;
+    }
+    if (!db.objectStoreNames.contains('products')) {
+        console.error('No "products" object store found!');
+        return;
+    }
+    // Store values in the newly created objectStore.
+    const productsStore = db.transaction('products', 'readwrite').objectStore('products');
 
+    productsStore.add({ id: 'p3', title: 'A First Product', price: 12.99, tags: ['Expensive', 'Luxury'] });
 });
 
 
 retrieveBtn.addEventListener('click', () => {
+    const productsStore = db.transaction('products', 'readwrite').objectStore('products');
+    //Get a single item from the store by its key
+    const request = productsStore.get('p1');
 
+    request.onsuccess = function () {
+        console.log(request.result);
+    }
 });
