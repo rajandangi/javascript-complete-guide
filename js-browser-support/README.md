@@ -17,17 +17,20 @@
 
 ## Regenerator-Runtime
 - **Why Regenerator-Runtime?**
-  Regenerator-Runtime is indispensable for projects utilizing async/await syntax and generator functions in JavaScript. It enables proper execution of these language features, especially in environments lacking native support.
+  Regenerator-Runtime is indispensable for projects utilizing `async/await` syntax and generator functions in JavaScript. It enables proper execution of these language features, especially in environments lacking native support.
 
 ## Browserslist
 - **What is Browserslist?**
   
-  Browserslist, specified in the package.json, defines the target browsers and their versions for project optimization. This customization tailors the output code to meet the specific needs of the intended user base.
+  Browserslist, specified in the `package.json`, defines the target browsers and their versions for project optimization. This customization tailors the output code to meet the specific needs of the intended user base.
+  ```json
+  "browserslist": "> 0.2%, not dead",
+  ```
 
 ## Changing Babel Preset-Env Configuration
 - **From 'usage' to 'entry'**
   
-  When transitioning from 'usage' to 'entry' in Babel Preset-Env, manual imports of core-js and regenerator-runtime become necessary. In 'entry' mode, explicit imports are required, giving developers precise control over polyfill inclusion. This control aids in reducing bundle size and optimizing performance.
+  When transitioning from '`usage`' to '`entry`' in Babel Preset-Env, manual imports of `core-js` and `regenerator-runtime` become necessary. In '`entry`' mode, explicit imports are required, giving developers precise control over polyfill inclusion. This control aids in reducing bundle size and optimizing performance.
 
     ```javascript
     // New Babel Preset-Env Configuration
