@@ -13,6 +13,22 @@ module.exports = {
   // devServer: {
   //   contentBase: './'
   // }
+  module: {
+    rules: [
+      {
+        test: /\.(?:js|mjs|cjs)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { useBuiltIns: 'usage', corejs: { version: 3 } }]
+            ]
+          }
+        }
+      }
+    ]
+  },
   plugins: [
     new CleanPlugin.CleanWebpackPlugin()
   ]
