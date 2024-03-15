@@ -11,9 +11,24 @@ class PlaceFinder {
         // if we don't bind the method to the class, the 'this' keyword will refer to the button element
         locateUserBtn.addEventListener('click', this.locateUserHandler.bind(this));
         addressForm.addEventListener('submit', this.findAddressHandler.bind(this));
-        // this.shareBtn.addEventListener('click', this.sharePlaceHandler.bind(this));
+        this.shareBtn.addEventListener('click', this.sharePlaceHandler);
     }
 
+    sharePlaceHandler() {
+        const shareLinkInput = document.getElementById('share-link');
+        if (!navigator.clipboard) {
+            shareLinkInput.select();
+            return;
+        }
+        navigator.clipboard.writeText(shareLinkInput.value)
+            .then(() => {
+                alert('Copied into clipboard!');
+            })
+            .catch(err => {
+                console.log(err);
+                shareLinkInput.select();
+            });
+    }
     /**
      * Selects a place on the map and renders it if the map is already initialized,
      * otherwise creates a new map instance and renders the place.
