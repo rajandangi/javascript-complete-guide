@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const router = express.Router();
 
 // locations is the name of the database
-const uri = "mongodb+srv://rajandangi:KM3ZnsSKLA6DkOfL@mangodb-learning.0jvdnvx.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://<username>:<password>@mangodb-learning.0jvdnvx.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri);
