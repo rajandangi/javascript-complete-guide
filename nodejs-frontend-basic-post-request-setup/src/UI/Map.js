@@ -1,6 +1,5 @@
 export class Map {
   constructor(coords) {
-    // this.coordinates = coords;
     this.render(coords);
   }
 
@@ -11,7 +10,7 @@ export class Map {
     }
 
     const map = new google.maps.Map(document.getElementById('map'), {
-      center:coordinates,
+      center: coordinates,
       zoom: 16
     });
 

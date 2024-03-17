@@ -1,4 +1,4 @@
-const path = require('path');
+const { resolve, join } = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
@@ -9,12 +9,17 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist', 'assets', 'scripts'),
+    path: resolve(__dirname, 'dist', 'assets', 'scripts'),
     publicPath: 'assets/scripts/'
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
-    contentBase: './dist'
+    devMiddleware: {
+      writeToDisk: true,
+    },
+    static: {
+      directory: join(__dirname, './dist'),
+    },
   },
   module: {
     rules: [
