@@ -19,8 +19,7 @@ app.use((request, response, next) => {
     const userName = request.body.username || 'Unknown User';
     //Render the index.ejs file and pass the pass options to the view
     response.render('index', {
-        user: userName,
-        role: 'admin'
+        user: userName
     });
 });
 
