@@ -12,6 +12,9 @@ In this repository, you will find various sample projects, each demonstrating a 
 8. Javascript Tooling: EsLint, webpack, etc.
 9. Utilizing Browser Storage: localStorage,sessionStorage, Cookies, and IndexedDB
 10. Javascript Browser Support
+11. Share My Place 
+12. Meta Programming
+13. Node js Implementation of "Share My Place"
 
 
 ## Some Useful Concepts
