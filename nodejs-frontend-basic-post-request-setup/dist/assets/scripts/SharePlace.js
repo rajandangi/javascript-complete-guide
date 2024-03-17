@@ -240,7 +240,7 @@ class PlaceFinder {
     }
 
     // Send a POST request to the server to store the location
-    fetch('http://localhost:3000/add-location', {
+    fetch('http://localhost:3001/add-location', {
       method: 'POST',
       body: JSON.stringify({
         address: address,
@@ -253,11 +253,11 @@ class PlaceFinder {
     }).then(response => {
       return response.json();
     }).then(data => {
-      console.log(data);
+      const locationId = data.locId;
+      this.shareBtn.disabled = false;
+      const shareLinkInput = document.getElementById('share-link');
+      shareLinkInput.value = `${location.origin}/my-place/?location=${locationId}`;
     });
-    this.shareBtn.disabled = false;
-    const shareLinkInput = document.getElementById('share-link');
-    shareLinkInput.value = `${location.origin}/my-place?address=${encodeURI(address)}&lat=${coordinates.lat}&lng=${coordinates.lng}`;
   }
   locateUserHandler() {
     // Check if the browser supports the geolocation API

@@ -110,13 +110,15 @@ class LoadedPlace {
 // Get the query parameters from the URL
 const url = new URL(location.href);
 const queryParams = url.searchParams;
-// The '+' sign in front of the string is a shortcut to convert it to a number
-const coords = {
-  lat: +queryParams.get('lat'),
-  lng: +queryParams.get('lng')
-};
-const address = queryParams.get('address');
-new LoadedPlace(coords, address);
+const locId = queryParams.get('location');
+fetch('http://localhost:3001/location/' + locId).then(response => {
+  if (response.status === 500) {
+    throw new Error('Could not find location!');
+  }
+  return response.json();
+}).then(data => {
+  new LoadedPlace(data.coordinates, data.address);
+});
 })();
 
 /******/ })()
