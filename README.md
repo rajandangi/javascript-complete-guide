@@ -15,6 +15,7 @@ In this repository, you will find various sample projects, each demonstrating a 
 11. Share My Place 
 12. Meta Programming
 13. Node js Implementation of "Share My Place" & MongoDB
+14. Security
 
 
 ## Some Useful Concepts
@@ -33,3 +34,17 @@ In this repository, you will find various sample projects, each demonstrating a 
 10. [Babel](https://github.com/babel/babel-loader)
 11. [Core js](https://www.npmjs.com/package/core-js)
 12. [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime)
+
+
+# JavaScript Security
+1. What could go Wrong?
+   ![image](/uploads/what-could-go-wrong.png)
+
+2. Cross-Site Request Forgery (CSRF)
+   ![image](/uploads/csrf.png)
+
+3. Cross-Origin Resource Sharing (CORS)
+   ![image](/uploads/cors.png)
+
+4. More about JavaScript Security: https://medium.com/@dhtmlx/security-of-javascript-applications-1c95cd2ce533
+5. [Sanitize Html](https://www.npmjs.com/package/sanitize-html)
