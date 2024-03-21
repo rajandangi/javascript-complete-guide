@@ -16,6 +16,7 @@ In this repository, you will find various sample projects, each demonstrating a 
 12. Meta Programming
 13. Node js Implementation of "Share My Place" & MongoDB
 14. Security
+15. Performance
 
 
 ## Some Useful Concepts
@@ -48,3 +49,8 @@ In this repository, you will find various sample projects, each demonstrating a 
 
 4. More about JavaScript Security: https://medium.com/@dhtmlx/security-of-javascript-applications-1c95cd2ce533
 5. [Sanitize Html](https://www.npmjs.com/package/sanitize-html)
+
+
+# JavaScript Performace
+1. [Analyze runtime performance](https://developer.chrome.com/docs/devtools/performance)
+2. [Optimize JavaScript execution](https://web.dev/articles/optimize-javascript-execution)
