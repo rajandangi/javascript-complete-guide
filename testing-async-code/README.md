@@ -14,3 +14,8 @@ Simulates browser interaction. Primarily used for end-to-end (E2E) testing.
 1. Run `npm install`
 2. Then, run `npm run start`
 3. To run testing, `npm run test`
+
+
+## Resources
+1. Article on JS Testing: https://academind.com/tutorials/javascript-testing-introduction
+2. Testing with Spies, Stubs & Mocks: https://www.harrymt.com/blog/2018/04/11/stubs-spies-and-mocks-in-js.html
