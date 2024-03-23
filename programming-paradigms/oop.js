@@ -13,7 +13,12 @@ class Validator {
     }
 }
 
-
+/**
+ * Represents a User.
+ *
+ * @class
+ * @classdesc A class that represents a user with a username and password.
+ */
 class User {
     constructor(uName, uPassword) {
         this.userName = uName;
