@@ -28,3 +28,6 @@
 ## Types of Web components
 1. Autonomous Elements
 2. Extended Built-it elements
+
+## Web Component Lifecycle
+![image](/uploads/webcomponent-lifecycle.png)
