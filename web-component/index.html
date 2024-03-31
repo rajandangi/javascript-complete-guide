@@ -7,12 +7,20 @@
     <title>Web Component</title>
     <!-- <script src="modal.js"></script> -->
     <script src="tooltip.js"></script>
+    <script src="confirm-link.js"></script>
 </head>
 
 <body>
-    <rajan-tooltip text="Web Components is a set of standards."></rajan-tooltip>
+
+    <p>
+        <rajan-tooltip text="Web Components is a set of standards.">Web Components</rajan-tooltip>
+        are awesome
+    </p>
+
     <rajan-tooltip></rajan-tooltip>
 
+
+    <a is="rajan-confirm-link" href="http://www.google.com">Google</a>
     <!-- <uc-modal>
         <h1 slot="title">The Modal Title</h1>
         <p>This is our first web Component</p>
