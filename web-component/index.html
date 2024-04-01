@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Component</title>
-    <!-- <script src="modal.js"></script> -->
+    <script src="modal.js"></script>
     <script src="tooltip.js"></script>
     <script src="confirm-link.js"></script>
     <style>
@@ -16,6 +16,10 @@
         html {
             --color-primary: #00fff7;
             font-family: sans-serif;
+        }
+
+        body {
+            margin: 2rem;
         }
     </style>
 </head>
@@ -35,16 +39,37 @@
     <p>
         <a is="rajan-confirm-link" href="http://www.google.com">Google</a>
     </p>
-    <!-- <uc-modal>
+
+
+    <rajan-modal>
         <h1 slot="title">The Modal Title</h1>
         <p>This is our first web Component</p>
-    </uc-modal> -->
+    </rajan-modal>
+
+    <hr>
+
+    <div>
+        <h2>Working on Modal web component</h2>
+        <p>Please confirm your choice</p>
+        <button>Show Details & Confirm</button>
+    </div>
 
     <script>
-        // const modal = document.querySelector('uc-modal');
-        // setTimeout(() => {
-        //     modal.open();
-        // }, 3000);
+        const confirmButton = document.querySelector('button');
+        const modal = document.querySelector('rajan-modal');
+
+        modal.addEventListener('cancel', () => {
+            console.log('Cancel button clicked');
+        });
+        modal.addEventListener('confirm', () => {
+            console.log('Cnfirm button clicked');
+        });
+
+        confirmButton.addEventListener('click', () => {
+            if (!modal.isOpen) {
+                modal.open();
+            }
+        });
     </script>
 </body>
 

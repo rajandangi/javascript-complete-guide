@@ -31,3 +31,12 @@
 
 ## Web Component Lifecycle
 ![image](/uploads/webcomponent-lifecycle.png)
+
+## Useful Resources & Links
+1. MDN Docs on Web Components: https://developer.mozilla.org/en-US/docs/Web/Web_Components
+
+2. More about Templates & Slots: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
+
+3. Google Article on Custom Elements: https://developers.google.com/web/fundamentals/web-components/customelements
+
+4. Google Article on Shadow DOM: https://developers.google.com/web/fundamentals/web-components/shadowdom
